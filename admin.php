@@ -9,15 +9,15 @@
 	}else{
 		$c = mysql_connect("...", "...", "...");
 		
-		$grab_app = "SELECT * FROM `syncedapp`.`moderator`";
+		$grab_app = "SELECT * FROM `twsicomm_syncedapp`.`moderator`";
 		$e = mysql_query($grab_app, $c);
 		
 		if(!$e) {
 			die("Error grabbing applications for moderators: ".mysql_error());
 		}
-		echo "<b>Synced Id's and such will appear as 0 or blank because it is not submitted yet.</b><br/><table border='1' style='background-color: gray;'><tr><td>Synced ID</td><td>User's Age</td><td>Has Posted</td><td>Reasons why</td><td>Ip Address</td></tr>";
+		echo "<b>Synced Id's and such will appear as 0 or blank because it is not submitted yet.</b><br/><table border='1' style='background-color: gray;'><tr><td>Synced ID</td><td>User's Age</td><td>Has Posted</td><td>Reasons why</td><td>When available</td><td>Will respond to mail.</td><td>Ip Address</td></tr>";
 		while($row = mysql_fetch_array($e)) {
-			echo "<tr><td>{$row['synced_id']}</td><td>{$row['synced_age']}</td><td>{$row['posted']}</td><td>{$row['synced_reason']}</td><td>{$row['synced_ip']}</td><td><a href='admin.php?deletePost=deleted&id={$row['id']}'>Delete Appliaction/Ignore Application</a></td></tr>";
+			echo "<tr><td>{$row['synced_id']}</td><td>{$row['synced_age']}</td><td>{$row['posted']}</td><td>{$row['synced_reason']}</td><td>{$row['synced_free']}</td><td>{$row['synced_r']}</td><td>{$row['synced_ip']}</td><td><a href='admin.php?deletePost=deleted&id={$row['id']}'>Delete Appliaction/Ignore Application</a></td></tr>";
 		}
 		echo "</table>";
 	}
@@ -35,7 +35,7 @@
 	if(isset($_GET['deletePost'])) {
 		$id = $_GET['id'];
 		
-		$delete = "DELETE FROM `syncedapp`.`moderator` WHERE id = $id";
+		$delete = "DELETE FROM `twsicomm_syncedapp`.`moderator` WHERE id = $id";
 		$e = mysql_query($delete, $c);
 		
 		if(!$e) {
