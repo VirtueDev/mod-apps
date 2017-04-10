@@ -1,6 +1,6 @@
 <html>
  <head>
-  <title>Synced Online - Moderators Application</title>
+  <title>Synced Online - Moderator's Application</title>
  </head>
  <body>
   <center><b>Simple form for a moderator application.: </b><i style='color:red;'>Your IP Address is used to prevent spamming and will not be released publically to users.</i></center><br/>
