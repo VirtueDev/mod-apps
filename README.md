@@ -4,3 +4,7 @@ A PHP and SQL-based application form for game moderators.
 
 # The purpose of this application.
 The only purpose of this application is to make it easy and simple to read. As well as organize some of the submissions user's post. It also blocks their ip after posting to prevent spamming. An ip is then used so no duplicate submissions from the same user at once. And it also makes it easier for us to read the submit's without going into synced's survey.
+
+# Needs adding/fixing...
+1. Layout of the website. - [Vox/TWSICommunity]
+2. Work on the database tables. - [TWSICommunity]
